@@ -5,7 +5,7 @@ const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'fatec',
-    database: 'CRUD'
+    database: 'Crud'
 });
 
 // Conectar com o banco de dados

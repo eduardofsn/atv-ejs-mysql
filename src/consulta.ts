@@ -19,6 +19,18 @@ app.get('/', (req, res) => {
     });
 });
 
+app.get('/pedidos', (req, res) => {
+    connection.query('SELECT * from pedidos', (err, results) => {
+        if(err){
+            console.error('Erro ao buscar pedidos:', err);
+            res.status(500).send('Erro ao buscar pedidos');
+            return;
+        }
+        // Renderizar a página 'index.ejs' e passar os dados da consulta com uma variável
+        res.render('index2', { pedidos: results });
+    });
+});
+
 app.listen(3000, () =>{
     console.log('Servidor rodando na porta 3000');
 });
